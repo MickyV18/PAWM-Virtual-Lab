@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabXplore - Hukum Newton</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="value-unscreen.gif" alt="LabXplore Logo" class="logo-icon">
+            <div class="logo-text">
+                <h1>
+                    LabXplore
+                    <p>Discover Physics Through Virtual Experiments</p>
+                </h1>
+            </div>
+        </div>
+        <button id="toggleButton" class="start-button">Mulai Simulasi</button>
+    </header>
+    
+    <main>
+        <section id="introSection" class="hero">
+            <section class="hero-content">
+                <h2>HUKUM NEWTON</h2>
+                <p>Hukum Newton adalah tiga prinsip dasar yang mengatur gerak benda dan merupakan fondasi dari mekanika klasik. Hukum-hukum ini pertama kali dirumuskan oleh Sir Isaac Newton pada abad ke-17 dan masih digunakan hingga sekarang untuk menjelaskan berbagai fenomena dalam fisika.</p>
+                <button id="learnMoreButton" class="learn-more-button">Pelajari Lebih Lanjut</button>
+            </section>
+        </section>
+
+        <section id="newtonsLaws" class="laws-section">
+            <div id="hukumPertama" class="law-item law-left">
+                <div class="law-text">
+                    <h3>Hukum Pertama Newton (Hukum Kelembaman)</h3>
+                    <p>"Setiap benda akan tetap dalam keadaan diam atau bergerak lurus beraturan kecuali ada gaya eksternal yang bekerja padanya."</p>
+                </div>
+                <img src="image1.png" alt="Hukum Pertama Newton" class="law-image">
+            </div>
+            <div id="hukumKedua" class="law-item law-right">
+                <img src="image2.png" alt="Hukum Kedua Newton" class="law-image">
+                <div class="law-text">
+                    <h3>Hukum Kedua Newton (Hukum Percepatan)</h3>
+                    <p>"Percepatan sebuah benda sebanding dengan gaya yang bekerja pada benda tersebut dan berbanding terbalik dengan massanya."</p>
+                </div>
+            </div>
+            <div id="hukumKetiga" class="law-item law-left">
+                <div class="law-text">
+                    <h3>Hukum Ketiga Newton (Aksi-Reaksi)</h3>
+                    <p>"Setiap aksi memiliki reaksi yang sama besar namun berlawanan arah."</p>
+                </div>
+                <img src="image3.png" alt="Hukum Ketiga Newton" class="law-image">
+            </div>
+        </section>        
+
+        <section id="simulationSection" class="simulation-container" style="display: none;">
+            <h2>HUKUM NEWTON</h2>
+            <div class="controls">
+                <div class="control-item">
+                    <label for="mass">Massa (kg)</label>
+                    <input type="range" id="mass" min="0" max="100" value="0">
+                    <span>0 kg</span>
+                </div>
+                <div class="control-item">
+                    <label for="force">Gaya Dorong (N)</label>
+                    <input type="range" id="force" min="0" max="1000" value="0">
+                    <span>0 N</span>
+                </div>
+                <div class="control-item">
+                    <label for="friction">Koefisien Gaya Gesek (μ)</label>
+                    <input type="range" id="friction" min="0" max="1" step="0.01" value="0">
+                    <span>0</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="startSimulation">Mulai Simulasi</button>
+                <button id="resetSimulation">Reset</button>
+            </div>
+            <div class="simulation-area">
+                <!-- Placeholder for the simulation animation -->
+            </div>
+            <div class="results">
+                <h3>Hasil Simulasi</h3>
+                <p>Percepatan (a): <span id="acceleration">0 m/s²</span></p>
+                <p>Kecepatan (v): <span id="velocity">0 m/s</span></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #55DDE0;
+    --secondary-color: #006D77;
+    --third-color: #EDF6F9;
+    --button-color: #FFDDD2;
+    --fifth-color: #E29578;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+header {
+    background: linear-gradient(to right, #EDF6F9, var(--primary-color));
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Make the header stick to the top */
+    top: 0; /* Position it at the top of the page */
+    left: 0; /* Make sure it stretches from left to right */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 24px;
+}
+
+.logo-text p {
+    margin: 0;
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+.start-button {
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 50px;
+}
+
+.hero{
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.hero-content {
+    background-position: center;
+    color: var(--text-color);
+    padding: 50px;
+    text-align: center;
+    max-width: 800px;
+    height: 580px;
+
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    color: var(--button-color);
+}
+
+.hero p {
+    color: var(--button-color);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.learn-more-button {
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 150px;
+}
+
+
+.simulation-container {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-item label {
+    flex: 1;
+    color: var(--text-color);
+}
+
+.control-item input {
+    flex: 2;
+    margin: 0 10px;
+}
+
+.control-item span {
+    flex: 0 0 50px;
+    text-align: right;
+    color: var(--text-color);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.simulation-area {
+    background-color: red;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.results {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.results h3 {
+    margin-top: 0;
+}
+
+.simulation-area {
+    background-color: rgba(255, 0, 0, 0.1); /* Warna merah terang transparan */
+    height: 200px;
+    position: relative;
+    overflow: hidden; /* Supaya objek tidak keluar dari area simulasi */
+}
+
+.simulation-area div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue; /* Warna blok yang akan bergerak */
+    top: 75px; /* Posisi vertikal tetap di tengah area simulasi */
+}
+
+.hero {
+    text-align: center;
+}
+
+.content {
+    background-color: rgba(0, 109, 119, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+
+}
+
+.content h2 {
+    color: #55DDE0;
+    font-size: 24px;
+    position: relative;
+}
+
+.content p {
+    color: #EDF6F9;
+    position: relative;
+    font-size: 18px;
+}
+
+.icon {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.laws-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--third-color);
+}
+
+.law-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    max-width: 900px;
+}
+
+.law-item.law-left {
+    flex-direction: row; /* Text on the left, image on the right */
+}
+
+.law-item.law-right {
+    flex: 0 0 200px;
+    padding: 0 20px;
+}
+
+.law-text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.law-text h3 {
+    font-size: 32px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.law-text p {
+    font-size: 20px;
+    color: var(--button-color);
+    margin-bottom: 10px;
+}
+
+.law-image {
+    width: 500px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .law-item {
+        flex-direction: column !important;
+        text-align: left;
+    }
+
+    .law-text {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .law-image {
+        width: 120px;
+        margin-bottom: 10px;
+    }
+}
