@@ -23,7 +23,7 @@ let position = 0;
 let acceleration = 0;
 let interval;
 let simulationStarted = false;
-let positionDots = []; // Store the positions and distances of dots
+let positionDots = [];
 let dotInterval;
 
 let updatedMass = mass;
@@ -42,6 +42,10 @@ const allInputs = [
   kineticFrictionValue,
 ];
 
+document
+  .querySelector(".learn-more-button")
+  .addEventListener("click", handleScrollToSection);
+
 function disableInputs() {
   allInputs.forEach((input) => (input.disabled = true));
 }
@@ -53,19 +57,19 @@ function enableInputs() {
 function synchronizeSliderAndInput(slider, input, min, max) {
   slider.addEventListener("input", () => {
     input.value = slider.value;
-    storePhysicsParameters(); // Store new parameters without applying them
+    storePhysicsParameters();
   });
 
   input.addEventListener("blur", () => {
     validateInput(slider, input, min, max);
-    storePhysicsParameters(); // Store new parameters without applying them
+    storePhysicsParameters();
   });
 
   input.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
       validateInput(slider, input, min, max);
-      storePhysicsParameters(); // Store new parameters without applying them
+      storePhysicsParameters();
     }
   });
 }
@@ -122,7 +126,7 @@ function updatePhysics() {
     acceleration = 0;
   }
 
-  velocity += acceleration * 0.1; // Small time step
+  velocity += acceleration * 0.1;
   position += velocity * 0.1;
 
   accelerationOutput.innerText = acceleration.toFixed(2);
@@ -144,15 +148,15 @@ function drawSimulation() {
   ctx.fillStyle = "#ffddd2";
   positionDots.forEach((dot, index) => {
     ctx.beginPath();
-    ctx.arc(dot.x, canvas.height - 50, 5, 0, Math.PI * 2); // Align dots with the horizontal line
+    ctx.arc(dot.x, canvas.height - 50, 5, 0, Math.PI * 2);
     ctx.fill();
 
     const textYPosition =
       index % 2 === 0 ? canvas.height - 60 : canvas.height - 40;
-    ctx.fillStyle = "#000"; // Black color for distance text
+    ctx.fillStyle = "#000";
     ctx.font = "12px Arial";
-    ctx.fillText(`${Math.round(dot.distance)} m`, dot.x - 10, textYPosition); // Display rounded integer distance
-    ctx.fillStyle = "#ffddd2"; // Reset color for next dot
+    ctx.fillText(`${Math.round(dot.distance)} m`, dot.x - 10, textYPosition);
+    ctx.fillStyle = "#ffddd2";
   });
 
   ctx.fillStyle = "#000";
@@ -161,9 +165,9 @@ function drawSimulation() {
 }
 
 function addPositionDot() {
-  const distanceTravelled = Math.round(position); // Round distance to the nearest integer
+  const distanceTravelled = Math.round(position);
   positionDots.push({ x: position, distance: distanceTravelled });
-  if (positionDots.length > 100) positionDots.shift(); // Limit the number of dots to avoid overflow
+  if (positionDots.length > 100) positionDots.shift();
 }
 
 startBtn.onclick = () => {
@@ -171,14 +175,14 @@ startBtn.onclick = () => {
     alert(
       "Koefisien gaya gesek kinetik tidak boleh lebih besar dari koefisien gaya gesek statik!"
     );
-    return; // Prevent the simulation from starting
+    return;
   }
 
   if (!simulationStarted) {
-    applyStoredParameters(); // Apply stored parameters only when "Start" is clicked
+    applyStoredParameters();
     simulationStarted = true;
     interval = setInterval(updatePhysics, 100);
-    dotInterval = setInterval(addPositionDot, 1000); // Add dots every 1 second
+    dotInterval = setInterval(addPositionDot, 1000);
     disableInputs();
     startBtn.disabled = true;
     startBtn.innerText = "Simulasi Berjalan";
@@ -187,13 +191,13 @@ startBtn.onclick = () => {
 
 resetBtn.onclick = () => {
   clearInterval(interval);
-  clearInterval(dotInterval); // Clear the dot interval
+  clearInterval(dotInterval);
   interval = null;
   simulationStarted = false;
   velocity = 0;
   position = 0;
   acceleration = 0;
-  positionDots = []; // Clear all dots
+  positionDots = [];
   accelerationOutput.innerText = "0";
   velocityOutput.innerText = "0";
   drawSimulation();
@@ -216,7 +220,6 @@ function checkAnswers() {
 
   let score = 0;
 
-  // Iterate over each answer
   for (let question in correctAnswers) {
     const userAnswer = document.querySelector(
       `select[name="${question}"], input[name="${question}"]`
@@ -226,7 +229,6 @@ function checkAnswers() {
     }
   }
 
-  // Display the result
   const scoreDisplay = document.getElementById("scoreDisplay");
   scoreDisplay.innerHTML = `Kamu menjawab dengan benar ${score} dari ${
     Object.keys(correctAnswers).length

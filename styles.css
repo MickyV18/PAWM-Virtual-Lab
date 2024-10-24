@@ -24,7 +24,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; /* Make the header sticky */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -59,7 +59,7 @@ header {
   font-size: 14px;
 }
 #gayaGesek {
-  background-color: #edf6f9; /* Warna latar belakang yang sama dengan gambar */
+  background-color: #edf6f9;
   padding: 20px;
 }
 #gayaGesek h2 {
@@ -74,15 +74,13 @@ header {
   margin-left: 50px;
 }
 #gayaGesek p {
-  font-size: 18px; /* Ukuran font untuk paragraf */
-  line-height: 1.6; /* Spasi antar-baris lebih lebar */
+  font-size: 18px;
+  line-height: 1.6;
   color: var(--secondary-color);
 }
 .law-text.teori {
-  background-color: var(
-    --secondary-color
-  ); /* Latar belakang hitam pada kotak rumus */
-  color: #fff; /* Warna teks putih */
+  background-color: var(--secondary-color);
+  color: #fff;
   padding: 20px;
   border-radius: 10px;
   margin-top: 10px;
@@ -94,7 +92,7 @@ header {
 .law-text.teori p,
 .law-text.teori ul {
   font-size: 16px;
-  color: #ffffff !important; /* Warna teks putih di dalam kotak definisi dan rumus */
+  color: #ffffff !important;
 }
 .law-text.teori p {
   margin-bottom: 0px;
@@ -106,16 +104,16 @@ header {
   font-size: 14px;
 }
 .law-text.teori ul li {
-  margin-bottom: 5px; /* Memberikan jarak antar-poin */
+  margin-bottom: 5px;
 }
 .logo-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit the color from the parent elements */
-  display: block; /* Make the entire text block clickable */
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 .logo-link:hover {
-  color: inherit; /* Prevent color changes on hover */
-  text-decoration: none; /* No underline on hover */
+  color: inherit;
+  text-decoration: none;
 }
 .hero {
   background-image: url("background.jpg");
@@ -182,17 +180,17 @@ header {
   color: var(--text-color);
 }
 .simulation-area {
-  background-color: rgba(255, 0, 0, 0.1); /* Warna merah terang transparan */
+  background-color: rgba(255, 0, 0, 0.1);
   height: 200px;
   position: relative;
-  overflow: hidden; /* Supaya objek tidak keluar dari area simulasi */
+  overflow: hidden;
 }
 .simulation-area div {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: var(--secondary-color); /* Warna blok yang akan bergerak */
-  top: 75px; /* Posisi vertikal tetap di tengah area simulasi */
+  background-color: var(--secondary-color);
+  top: 75px;
 }
 .hero {
   text-align: center;
@@ -237,7 +235,7 @@ header {
   max-width: 1500px;
 }
 .law-item.law-left {
-  flex-direction: row; /* Text on the left, image on the right */
+  flex-direction: row;
 }
 .law-item.law-right {
   flex: 0 0 200px;
@@ -288,9 +286,9 @@ header {
   transform: scale(1.05);
 }
 .box-pic {
-  width: 135px; /* Adjust size as needed */
+  width: 135px;
   height: auto;
-  margin-bottom: 20px; /* Space between GIF and text */
+  margin-bottom: 20px;
 }
 .box-icon {
   width: 130px;
@@ -311,25 +309,25 @@ p {
   border: none;
 }
 #simulationCanvas {
-  background-color: #ffffff; /* White background for canvas */
-  border: 2px solid #2f4858; /* Dark blue border */
+  background-color: #ffffff;
+  border: 2px solid #2f4858;
   margin-top: 20px;
-  width: 100%; /* Full width of the parent container */
-  height: auto; /* Let JavaScript handle the height */
+  width: 100%;
+  height: auto;
 }
 
 .controls,
 .output {
-  background-color: #33658a; /* Medium blue background */
-  color: #f6ae2d; /* Yellow text */
+  background-color: #33658a;
+  color: #f6ae2d;
   padding: 15px;
   margin-top: 20px;
   border-radius: 5px;
 }
 
 .start-button {
-  background-color: transparent; /* Make button background match the header */
-  color: var(--secondary-color); /* Set text color to match the header's text */
+  background-color: transparent;
+  color: var(--secondary-color);
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
@@ -337,11 +335,11 @@ p {
   font-size: 16px;
 }
 .start-button:active {
-  color: var(--fifth-color-color); /* Change the text color when clicked */
+  color: var(--fifth-color-color);
 }
 .start-button:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Slight background change on hover */
-  color: var(--third-color); /* Optional text color change on hover */
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--third-color);
 }
 .learn-more-button {
   background-color: var(--button-color);
@@ -354,7 +352,7 @@ p {
   margin-top: 150px;
 }
 button:hover {
-  background-color: var(--fifth-color); /* Dark blue hover effect */
+  background-color: var(--fifth-color);
   color: var(--third-color);
   border: none;
 }
@@ -390,7 +388,7 @@ button:hover {
     margin-right: 100px;
   }
   button:hover {
-    background-color: var(--fifth-color); /* Dark blue hover effect */
+    background-color: var(--fifth-color);
     color: var(--third-color);
     border: none;
   }
@@ -409,22 +407,22 @@ button:hover {
     border-radius: 10px;
   }
   .control-item input[type="number"] {
-    max-width: 50px; /* Set a shorter width for the input boxes */
-    padding: 5px; /* Padding to make the input comfortable */
-    font-size: 16px; /* Ensure the font size is still readable */
-    text-align: left; /* Center the text inside the box */
-    border: 1px solid #ccc; /* Add a subtle border */
-    border-radius: 5px; /* Round the corners */
-    margin-left: 10px; /* Add a little space from the slider */
-  } /* Style for the number input boxes */
+    max-width: 50px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
   .control-item input[type="range"] {
-    max-width: 450px; /* Set a shorter width for the input boxes */
-    padding: 5px; /* Padding to make the input comfortable */
-    font-size: 16px; /* Ensure the font size is still readable */
-    text-align: left; /* Center the text inside the box */
-    border: 1px solid #ccc; /* Add a subtle border */
-    border-radius: 5px; /* Round the corners */
-    margin-left: 10px; /* Add a little space from the slider */
+    max-width: 450px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
   }
 }
 #newtonQuizWrapper .quiz-container {
@@ -523,7 +521,7 @@ button:hover {
     margin-bottom: 20px;
   }
   body {
-    padding-top: 200px; /* Match or exceed the header height */
+    padding-top: 200px;
   }
 
   .logo-icon {
@@ -609,7 +607,7 @@ button:hover {
       margin-right: 100px;
     }
     button:hover {
-      background-color: var(--fifth-color); /* Dark blue hover effect */
+      background-color: var(--fifth-color);
       color: var(--third-color);
       border: none;
     }
@@ -632,21 +630,21 @@ button:hover {
     }
 
     .control-item input[type="number"] {
-      max-width: 50px; /* Set a shorter width for the input boxes */
-      padding: 5px; /* Padding to make the input comfortable */
-      font-size: 16px; /* Ensure the font size is still readable */
-      text-align: left; /* Center the text inside the box */
-      border: 1px solid #ccc; /* Add a subtle border */
-      border-radius: 5px; /* Round the corners */
-    } /* Style for the number input boxes */
+      max-width: 50px;
+      padding: 5px;
+      font-size: 16px;
+      text-align: left;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
     .control-item input[type="range"] {
-      max-width: 450px; /* Set a shorter width for the input boxes */
-      padding: 5px; /* Padding to make the input comfortable */
-      font-size: 16px; /* Ensure the font size is still readable */
-      text-align: left; /* Center the text inside the box */
-      border: 1px solid #ccc; /* Add a subtle border */
-      border-radius: 5px; /* Round the corners */
-      margin-left: 10px; /* Add a little space from the slider */
+      max-width: 450px;
+      padding: 5px;
+      font-size: 16px;
+      text-align: left;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-left: 10px;
     }
   }
 
