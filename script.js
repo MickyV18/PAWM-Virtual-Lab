@@ -42,10 +42,6 @@ const allInputs = [
   kineticFrictionValue,
 ];
 
-document
-  .querySelector(".learn-more-button")
-  .addEventListener("click", handleScrollToSection);
-
 function disableInputs() {
   allInputs.forEach((input) => (input.disabled = true));
 }
