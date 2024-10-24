@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LabXplore - Hukum Newton</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img alt="LabXplore Logo" class="logo-icon" src="value-unscreen.gif" />
+        <div class="logo-text">
+          <a class="logo-link" href="index.html">
+            <h1>
+              LabXplore
+              <p>Discover Physics Through Virtual Experiments</p>
+            </h1>
+          </a>
+        </div>
+      </div>
+      <nav class="button-group" id="navbar">
+        <button
+          class="start-button"
+          onclick="window.location.href='newtons_laws.html'"
+        >
+          Belajar
+        </button>
+        <button
+          class="start-button"
+          onclick="window.location.href='newton_lab.html'"
+        >
+          Simulasi
+        </button>
+        <button
+          class="start-button"
+          onclick="window.location.href='newton_quiz.html'"
+        >
+          Latihan
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="introSection">
+        <section class="hero-content">
+          <h2>HUKUM NEWTON</h2>
+          <p>
+            Hukum Newton adalah tiga prinsip dasar yang mengatur gerak benda dan
+            merupakan fondasi dari mekanika klasik. Hukum-hukum ini pertama kali
+            dirumuskan oleh Sir Isaac Newton pada abad ke-17 dan masih digunakan
+            hingga sekarang untuk menjelaskan berbagai fenomena dalam fisika.
+          </p>
+          <button class="learn-more-button" id="learnMoreButton">
+            Mari Mulai
+          </button>
+        </section>
+      </section>
+      <div class="box-container" id="boxSection">
+        <a class="box" href="newtons_laws.html">
+          <img alt="Belajar GIF" class="box-pic" src="reading-book.png" />
+          <h3>BELAJAR</h3>
+          <p>Memahami bagaimana Hukum Newton Bekerja</p>
+        </a>
+        <a class="box" href="newton_lab.html">
+          <img alt="Simulasi GIF" class="box-pic" src="experiment.png" />
+          <h3>SIMULASI</h3>
+          <p>Melakukan Eksperimen tentang Hukum Newton</p>
+        </a>
+        <a class="box" href="newton_quiz.html">
+          <img alt="Latihan GIF" class="box-pic" src="test.png" />
+          <h3>LATIHAN</h3>
+          <p>Mengaplikasikan rumus ke dalam studi kasus</p>
+        </a>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
