@@ -7,11 +7,16 @@
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "LabXplore/wsgi.py"
-    }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "static": {
+    "templates": "templates"
+  },
   "env": {
     "DJANGO_ENV": "production",
     "DB_PASSWORD": "@MickyValentino18",
