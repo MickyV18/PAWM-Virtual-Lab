@@ -1,7 +1,17 @@
 {
   "version": 2,
-  "builds": [{ "src": "LabXplore/wsgi.py", "use": "@vercel/python" }],
-  "routes": [{ "src": "/(.*)", "dest": "LabXplore/wsgi.py" }],
+  "builds": [
+    {
+      "src": "LabXplore/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "LabXplore/wsgi.py"
+    }
+  ],
   "env": {
     "DJANGO_ENV": "production",
     "DB_PASSWORD": "@MickyValentino18",
