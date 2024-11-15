@@ -15,7 +15,7 @@
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "static": {
-    "public": "templates"
+    "public": "LabXplorer/Static/templates"
   },
   "env": {
     "DJANGO_ENV": "production",
