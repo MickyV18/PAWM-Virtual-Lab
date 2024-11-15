@@ -87,14 +87,15 @@ LOGIN_URL = 'login'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ["DB_ENGINE"],
-        'NAME': os.environ["DB_NAME"],
-        'USER': os.environ["DB_USER"],
-        'PASSWORD': os.environ["DB_PASSWORD"],
-        'HOST': os.environ["DB_HOST"],
-        'PORT': os.environ["DB_PORT"],
+        'ENGINE': os.environ.get("DB_ENGINE", "django.db.backends.sqlite3"),
+        'NAME': os.environ.get("DB_NAME", os.path.join(BASE_DIR, "postgres")),
+        'USER': os.environ.get("DB_USER", "postgres.rouinwfdrthuatrwhoto"),
+        'PASSWORD': os.environ.get("DB_PASSWORD", "@MickyValentino18"),
+        'HOST': os.environ.get("DB_HOST", "aws-0-ap-southeast-1.pooler.supabase.com"),
+        'PORT': os.environ.get("DB_PORT", "6543"),
     }
 }
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Password validation
