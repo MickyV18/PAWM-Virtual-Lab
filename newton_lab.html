@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LabXplore - Newton Lab</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img alt="LabXplore Logo" class="logo-icon" src="value-unscreen.gif" />
+        <div class="logo-text">
+          <a class="logo-link" href="index.html">
+            <h1>
+              LabXplore
+              <p>Discover Physics Through Virtual Experiments</p>
+            </h1>
+          </a>
+        </div>
+      </div>
+      <nav class="button-group" id="navbar">
+        <button
+          class="start-button"
+          onclick="window.location.href='newtons_laws.html'"
+        >
+          Belajar
+        </button>
+        <button
+          class="start-button"
+          onclick="window.location.href='newton_lab.html'"
+        >
+          Simulasi
+        </button>
+        <button
+          class="start-button"
+          onclick="window.location.href='newton_quiz.html'"
+        >
+          Latihan
+        </button>
+      </nav>
+    </header>
+    <div id="newtonLabWrapper">
+      <main>
+        <div id="newtonLab">
+          <h2>Simulasi Hukum Newton</h2>
+          <div class="controls">
+            <div class="control-item">
+              <label for="mass"> Massa (kg): </label>
+              <input id="mass" max="100" min="1" type="range" value="10" />
+              <input
+                id="massValue"
+                max="100"
+                min="1"
+                type="number"
+                value="10"
+              />
+              <label for="mass"> Kg </label>
+            </div>
+            <div class="control-item">
+              <label for="force"> Gaya Dorong (N): </label>
+              <input id="force" max="1000" min="0" type="range" value="100" />
+              <input
+                id="forceValue"
+                max="1000"
+                min="0"
+                type="number"
+                value="100"
+              />
+              <label for="mass"> N </label>
+            </div>
+            <div class="control-item">
+              <label for="staticFriction">
+                Koefisien Gaya Gesek Statik (μ_s) :
+              </label>
+              <input
+                id="staticFriction"
+                max="0.99"
+                min="0"
+                step="0.01"
+                type="range"
+                value="0.1"
+              />
+              <input
+                id="staticFrictionValue"
+                max="0.99"
+                min="0"
+                step="0.01"
+                type="number"
+                value="0.01"
+              />
+              <label for="mass"> </label>
+            </div>
+            <div class="control-item">
+              <label for="kineticFriction">
+                Koefisien Gaya Gesek Kinetik (μ_k) :
+              </label>
+              <input
+                id="kineticFriction"
+                max="0.98"
+                min="0"
+                step="0.01"
+                type="range"
+                value="0.05"
+              />
+              <input
+                id="kineticFrictionValue"
+                max="0.98"
+                min="0"
+                step="0.01"
+                type="number"
+                value="0.05"
+              />
+              <label for="mass"> </label>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="startBtn">Mulai</button>
+            <button id="resetBtn">Reset</button>
+          </div>
+          <canvas height="200" id="simulationCanvas" width="1000"></canvas>
+          <div class="output">
+            <h3>Hasil Simulasi</h3>
+            <p>
+              Percepatan (a):
+              <span id="acceleration"> 0 </span>
+              m/s²
+            </p>
+            <p>
+              Kecepatan (v):
+              <span id="velocity"> 0 </span>
+              m/s
+            </p>
+          </div>
+        </div>
+      </main>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>

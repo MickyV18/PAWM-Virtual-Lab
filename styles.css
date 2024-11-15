@@ -1,0 +1,665 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  --primary-color: #55dde0;
+  --secondary-color: #006d77;
+  --third-color: #edf6f9;
+  --button-color: #ffddd2;
+  --fifth-color: #e29578;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+header {
+  background: linear-gradient(to right, #edf6f9, var(--primary-color));
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.logo-text h1 {
+  color: var(--secondary-color);
+  margin: 0;
+  font-size: 24px;
+}
+.logo-text p {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 14px;
+}
+#gayaGesek {
+  background-color: #edf6f9;
+  padding: 20px;
+}
+#gayaGesek h2 {
+  font-size: 30px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+#gayaGesek h3 {
+  font-size: 25px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+#gayaGesek p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--secondary-color);
+}
+.law-text.teori {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  max-width: 600px;
+  align-items: left !important;
+  align-content: left !important;
+  text-align: left !important;
+}
+.law-text.teori p,
+.law-text.teori ul {
+  font-size: 16px;
+  color: #ffffff !important;
+}
+.law-text.teori p {
+  margin-bottom: 0px;
+}
+.law-text.teori ul {
+  list-style-type: disc;
+}
+.law-text.teori p sub {
+  font-size: 14px;
+}
+.law-text.teori ul li {
+  margin-bottom: 5px;
+}
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.logo-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.hero {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+}
+.hero-content {
+  background-position: center;
+  color: var(--text-color);
+  padding: 50px;
+  text-align: center;
+  max-width: 800px;
+  height: 580px;
+}
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  color: var(--button-color);
+}
+.hero p {
+  color: var(--button-color);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.simulation-container {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+}
+.controls {
+  margin-bottom: 20px;
+}
+.control-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.control-item label {
+  flex: 1;
+  color: var(--text-color);
+}
+.control-item input {
+  flex: 2;
+  margin: 0 20px;
+}
+.control-item span {
+  flex: 0 0 50px;
+  text-align: right;
+  color: var(--text-color);
+}
+.results {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--text-color);
+}
+.simulation-area {
+  background-color: rgba(255, 0, 0, 0.1);
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.simulation-area div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  top: 75px;
+}
+.hero {
+  text-align: center;
+}
+.content {
+  background-color: rgba(0, 109, 119, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+.content h2 {
+  color: #55dde0;
+  font-size: 24px;
+  position: relative;
+}
+.content p {
+  color: #edf6f9;
+  position: relative;
+  font-size: 18px;
+}
+.icon {
+  width: 80px;
+  height: auto;
+  margin-top: 10px;
+}
+.laws-section {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 10px;
+  background-color: var(--third-color);
+  align-content: left !important;
+  text-align: left !important;
+}
+.law-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 0;
+  max-width: 1500px;
+}
+.law-item.law-left {
+  flex-direction: row;
+}
+.law-item.law-right {
+  flex: 0 0 200px;
+  padding: 0 20px;
+}
+.law-text {
+  flex: 1;
+  padding: 0 20px;
+}
+.law-text h3 {
+  font-size: 30px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+.law-text p {
+  font-size: 20px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+.teori {
+  margin-left: 50px;
+}
+.law-image {
+  width: 500px;
+  height: auto;
+}
+.box-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1100px;
+  text-align: center;
+  gap: 50px;
+}
+.box {
+  background-color: #006d77;
+  color: #edf6f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+.box:hover {
+  transform: scale(1.05);
+}
+.box-pic {
+  width: 135px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.box-icon {
+  width: 130px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+h3 {
+  font-size: 26px;
+  margin-top: 55px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.box:hover video {
+  outline: none;
+  border: none;
+}
+#simulationCanvas {
+  background-color: #ffffff;
+  border: 2px solid #2f4858;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.controls,
+.output {
+  background-color: #33658a;
+  color: #f6ae2d;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.start-button {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.start-button:active {
+  color: var(--fifth-color-color);
+}
+.start-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--third-color);
+}
+.learn-more-button {
+  background-color: var(--button-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 150px;
+}
+button:hover {
+  background-color: var(--fifth-color);
+  color: var(--third-color);
+  border: none;
+}
+#newtonLabWrapper {
+  #newtonLab {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  h2 {
+    color: var(--button-color);
+    font-size: 32px;
+  }
+  .controls {
+    background-color: var(--secondary-color);
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--button-color);
+  }
+  button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-right: 100px;
+  }
+  button:hover {
+    background-color: var(--fifth-color);
+    color: var(--third-color);
+    border: none;
+  }
+  #simulationCanvas {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+  }
+  .output {
+    margin-top: 20px;
+    background-color: var(--secondary-color);
+    color: var(--button-color);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .control-item input[type="number"] {
+    max-width: 50px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  .control-item input[type="range"] {
+    max-width: 450px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+}
+#newtonQuizWrapper .quiz-container {
+  background-color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: left;
+}
+#newtonQuizWrapper h1 {
+  text-align: left;
+  color: var(--button-color);
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+#newtonQuizWrapper h3 {
+  color: var(--button-color);
+  font-size: 1.2rem;
+}
+#newtonQuizWrapper label {
+  display: block;
+  margin: 8px 0;
+  font-size: 1rem;
+  color: var(--button-color);
+  margin-left: 40px;
+}
+#newtonQuizWrapper input[type="text"],
+#newtonQuizWrapper select {
+  width: 100px;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#newtonQuizWrapper button[type="button"] {
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: var(--fifth-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#newtonQuizWrapper button[type="button"]:hover {
+  background-color: #ff7a66;
+}
+#newtonQuizWrapper .question {
+  margin-bottom: 20px;
+}
+#newtonQuizWrapper .options {
+  display: flex;
+  flex-direction: column;
+}
+#newtonQuizWrapper .options label {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+#newtonQuizWrapper #scoreDisplay {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: var(--button-color);
+}
+
+@media (max-width: 768px) {
+  #newtonQuizWrapper .quiz-container {
+    width: 95%;
+  }
+  #newtonQuizWrapper h1 {
+    font-size: 1.5rem;
+  }
+
+  .law-item {
+    flex-direction: column !important;
+  }
+  .law-text {
+    padding: 0;
+    margin-bottom: 0px;
+    align-items: left !important;
+    align-content: left !important;
+    text-align: left !important;
+  }
+  .law-image {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    position: fixed;
+    margin-bottom: 20px;
+  }
+  body {
+    padding-top: 200px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text h1 {
+    font-size: 20px;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .box-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .box {
+    width: 250px;
+  }
+
+  .law-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .law-image {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .control-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #newtonQuizWrapper .quiz-container {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 420px;
+    margin: 50px 10px;
+    text-align: left;
+  }
+
+  #newtonLabWrapper {
+    #newtonLab {
+      background-color: var(--secondary-color);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 1000px;
+      margin: 50px 10px;
+      text-align: left;
+    }
+    h2 {
+      color: var(--button-color);
+      font-size: 32px;
+    }
+    .controls {
+      background-color: var(--secondary-color);
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: var(--button-color);
+    }
+    button {
+      background-color: var(--button-color);
+      color: var(--button-text-color);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 0px;
+      margin-right: 100px;
+    }
+    button:hover {
+      background-color: var(--fifth-color);
+      color: var(--third-color);
+      border: none;
+    }
+    #simulationCanvas {
+      background-color: #ffffff;
+      border: 2px solid #000000;
+      margin-top: 20px;
+      width: 100%;
+      height: 100px;
+    }
+    .output {
+      margin-top: 20px;
+      background-color: var(--secondary-color);
+      color: var(--button-color);
+      padding: 15px;
+    }
+
+    .control-item {
+      flex-direction: column;
+    }
+
+    .control-item input[type="number"] {
+      max-width: 50px;
+      padding: 5px;
+      font-size: 16px;
+      text-align: left;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .control-item input[type="range"] {
+      max-width: 450px;
+      padding: 5px;
+      font-size: 16px;
+      text-align: left;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+  }
+
+  #newtonQuizWrapper .quiz-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  #newtonQuizWrapper h1 {
+    font-size: 1.5rem;
+  }
+
+  .start-button,
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
