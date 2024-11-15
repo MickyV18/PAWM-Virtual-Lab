@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,18 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-24&&s7l@mj5e8wwpf@7*ix0ab*o49$p)vuc#3wul1igay(@64e"
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
 
+CSRF_COOKIE_SECURE = False
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic'
+    # Aplikasi bawaan Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,9 +45,14 @@ INSTALLED_APPS = [
     'users',
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+ROOT_URLCONF = 'LabXplore.urls'
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware'
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -51,8 +60,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-ROOT_URLCONF = "LabXplore.urls"
 
 TEMPLATES = [
     {
@@ -70,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "LabXplore.wsgi.application"
+WSGI_APPLICATION = "LabXplore.wsgi.app"
 
 LOGIN_URL = 'login'
 
@@ -80,12 +87,12 @@ LOGIN_URL = 'login'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.rouinwfdrthuatrwhoto',
-        'PASSWORD': '@MickyValentino18',
-        'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',  # Sesuaikan dengan URL Supabase Anda
-        'PORT': '6543',
+        'ENGINE': os.environ["DB_ENGINE"],
+        'NAME': os.environ["DB_NAME"],
+        'USER': os.environ["DB_USER"],
+        'PASSWORD': os.environ["DB_PASSWORD"],
+        'HOST': os.environ["DB_HOST"],
+        'PORT': os.environ["DB_PORT"],
     }
 }
 
