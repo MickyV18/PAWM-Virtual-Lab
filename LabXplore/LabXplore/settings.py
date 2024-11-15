@@ -79,8 +79,12 @@ LOGIN_URL = 'login'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",  # Menggunakan Path untuk menggabungkan
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.rouinwfdrthuatrwhoto',
+        'PASSWORD': '@MickyValentino18',
+        'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',  # Sesuaikan dengan URL Supabase Anda
+        'PORT': '6543',
     }
 }
 

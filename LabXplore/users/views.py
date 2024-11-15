@@ -27,6 +27,7 @@ import json
 from django.http import JsonResponse
 from .models import SimulationHistory
 
+
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = User
@@ -223,3 +224,14 @@ def save_simulation(request):
 def newton_lab_view(request):
     history_entries = SimulationHistory.objects.filter(user=request.user).order_by('-timestamp')
     return render(request, 'users/newton_lab.html', {'history_entries': history_entries})
+
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def delete_simulation_history(request):
+    if request.method == 'DELETE':
+        # Assuming you have a model 'SimulationHistory' that records the history
+        SimulationHistory.objects.all().delete()
+        return JsonResponse({'success': True})
+    return JsonResponse({'success': False}, status=405)

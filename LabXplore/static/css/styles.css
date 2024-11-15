@@ -117,7 +117,6 @@ header {
   text-decoration: none;
 }
 .hero {
-  background-image: url("/static/images/background.jpg");
   background-size: cover;
   background-position: center;
   display: flex;

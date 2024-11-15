@@ -236,9 +236,16 @@ function checkAnswers() {
 }
 
 const saveBtn = document.getElementById("saveBtn");
+let saveInProgress = false;
 
 saveBtn.addEventListener("click", function () {
-  const saveSimulationUrl = saveBtn.getAttribute("data-url");
+  if (saveInProgress) {
+    console.log("Save in progress, please wait...");
+    return;
+  }
+
+  saveInProgress = true;
+
   const simulationData = {
     mass: parseFloat(document.getElementById("mass").value),
     force: parseFloat(document.getElementById("force").value),
@@ -262,11 +269,44 @@ saveBtn.addEventListener("click", function () {
       return response.json();
     })
     .then((data) => {
+      saveInProgress = false;
       if (data.success) {
         alert("Simulasi disimpan!");
       } else {
         alert("Gagal menyimpan simulasi.");
       }
     })
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      console.error("Error:", error);
+      saveInProgress = false;
+    });
+});
+
+const deleteHistoryBtn = document.getElementById("deleteHistoryBtn");
+
+deleteHistoryBtn.addEventListener("click", function () {
+  const deleteUrl = deleteHistoryBtn.getAttribute("data-url");
+  fetch(deleteUrl, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]").value,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.json();
+    })
+    .then((data) => {
+      if (data.success) {
+        alert("History deleted successfully!");
+        document.querySelector("tbody").innerHTML = ""; // Clear the table
+      } else {
+        alert("Failed to delete history.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Error deleting history.");
+    });
 });

@@ -14,5 +14,6 @@ urlpatterns = [
     path('home/', views.home_view, name='home'),
     path('change_password/', views.change_password, name='change_password'),
     path('change_username/', views.change_username, name='change_username'),
+    path('delete-simulation-history/', views.delete_simulation_history, name='delete_simulation_history'),
     path('save_simulation/', views.save_simulation, name='save_simulation'),
 ]
