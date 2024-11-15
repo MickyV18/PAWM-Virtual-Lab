@@ -15,7 +15,7 @@
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "static": {
-    "templates": "templates"
+    "public": "templates"
   },
   "env": {
     "DJANGO_ENV": "production",
